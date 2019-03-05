@@ -155,22 +155,20 @@ available to the object) together as a whole. The datatype defines
 what methods and data should exist.
 
 \footnotesize
-#+BEGIN_SRC python
+#+BEGIN_SRC ipython
+class AClass:  # class declares a new datatype, no objects of this
+               # type are created yet
+    def __init__(self):  # methods can be attached to the class, first
+                         # parameter is "self", the object itself
+        self.a = 5  # kept in the object, can be used later
+    def adder(self, n):
+        return self.a + n
 
-  class AClass:  # class declares a new datatype, no objects of this type are create yet
-      def __init__(self):  # methods can be attached to the class, first
-			   # parameter is "self", the object itself
-	  self.a = 5  # kept in the object, can be used later
-      def adder(self, n):
-	  return self.a + n
-
-  # Create a new object of type "AClass"
-  an_obj = AClass()  # calls the __init__ method on creation
-  an_obj.a  # 5
-  an_obj.adder(7)  # 12, "self" passed automatically (here an_obj)
+# Create a new object of type "AClass"
+an_obj = AClass()  # calls the __init__ method on creation
+an_obj.a  # 5
+an_obj.adder(7)  # 12, "self" passed automatically (here an_obj)
 #+END_SRC
-
-#+RESULTS:
 
 ** Python2 vs Python3
 
@@ -184,6 +182,31 @@ what methods and data should exist.
       work, shouldn't notice
     - If you are and want to understand all the =.encode()= /
       =.decode()=, let me know
+
+** Type Signatures
+
+- Python has a utility =mypy= which can check types (similar to what C++ does)
+- In python3, can use the syntax:
+
+\footnotesize
+#+BEGIN_SRC python
+def aFn(a: input1_type, b: input2_type) -> output_type:
+  c: int_type = fn(a, b)
+#+END_SRC
+
+- where =input1_type=, =input2_type=, etc. are python objects
+- By itself, doesn't do anything, just user-defined meta-data attached
+  to objects
+- However, =mypy= interprets them as types, and checks that the types
+  match up
+  - If no type is present, it assumes that it is of type =Any=, which
+    represents any type
+- Can use =List[atype]= to represent a list of =atype= objects
+  - =from typing import List=
+- I will use this syntax to tell you what the types the functions you
+  write should include
+  - You can add them or not, but, beware, in python2, the special
+    syntax doesn't work
 
 * Random Numbers
 
@@ -430,3 +453,6 @@ today, we will write some:
 - Write code, test, upload to repo
   - I will mark tomorrow based on the last commit with a timestamp of
     today
+  - Bonus marks: add tests to the test_randomness.py file to check
+    that your code is working properly. I will merge the tests
+    together when making the final version for code marking
