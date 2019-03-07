@@ -280,14 +280,14 @@ So, we have
     :BEAMER_col: .6
     :END:
 
-#+ATTR_LATEX: :width .5\textwidth
+#+ATTR_LATEX: :width .49\textwidth
 [[file:../../2017-stats-for-pp/code/h1.pdf]]
-#+ATTR_LATEX: :width .5\textwidth
+#+ATTR_LATEX: :width .49\textwidth
 [[file:../../2017-stats-for-pp/code/h1p.pdf]]
 
-#+ATTR_LATEX: :width .5\textwidth
+#+ATTR_LATEX: :width .49\textwidth
 [[file:../../2017-stats-for-pp/code/h2.pdf]]
-#+ATTR_LATEX: :width .5\textwidth
+#+ATTR_LATEX: :width .49\textwidth
 [[file:../../2017-stats-for-pp/code/h4.pdf]]
 
 *** :B_ignoreheading:
@@ -448,6 +448,7 @@ today, we will write some:
   - Run the tests by running =pytest=
     - If it isn't installed, run =pip install pytest --user=
 - Create a github account
+- https://classroom.github.com/a/vKNBpsBj
 - Click the first assignment link to create your repo
 - Clone the repo (instructions on the page)
 - Write code, test, upload to repo
