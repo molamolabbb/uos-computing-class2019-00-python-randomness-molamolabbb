@@ -7,7 +7,7 @@ import math
 import numpy as np
 
 class randnr:
-    def __init__(self, seed):
+    def __init__(self, seed=1):
         self.seed = seed
         self.a = 1664525
         self.c = 1013904223
